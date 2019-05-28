@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        #wrapper {
+            width:400px;
+            background-color: honeydew;
+            padding: 10px;
+            margin: 0 auto 0 auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id ="wrapper">
+        <p> Simple calculator by Abdrakhman Niiazakhunov </p>
+        <center>
+            <form>
+                First number:<br />
+                <input type="text" name="First" />
+                <br /><br />
+                Second number:<br />
+                <input type="text" name="Second" />
+
+                <br /><br />
+                <input type="radio" name="mathType" value="plus"/> Plus<br/>
+                <input type="radio" name="mathType" value="multiply"/> Multiply<br/>
+                <input type="radio" name="mathType" value="delete"/> Delete
+                <br /><br />
+                <input type="submit" value="Get answer" />
+                <div th:if="${answer} != null">
+                    <p th:text= "'Answer is: ' + ${answer}"/>
+                </div>
+            </form>
+        </center>
+    </div>
+</body>
+</html>
